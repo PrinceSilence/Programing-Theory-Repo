@@ -17,8 +17,9 @@ public class PlayerController : MonoBehaviour
         playerCam = GameObject.Find("playerCam").GetComponent<Camera>();
         moveSpeed = 7;
         jumpForce = 200;
-        mouseSensitivity = 150f;
+        mouseSensitivity = 200f;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        
     }
 
     void Move()
@@ -57,4 +59,5 @@ public class PlayerController : MonoBehaviour
 
         playerRB.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }
+
 }

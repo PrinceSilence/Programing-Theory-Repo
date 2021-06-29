@@ -5,13 +5,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int damage = 1;
-    private float speed;
+    public float speed;
     private Rigidbody projectileRB;
 
     private void Awake()
     {
-        speed = 2;
+        speed = 40;
         projectileRB = gameObject.GetComponent<Rigidbody>();
-        projectileRB.AddRelativeForce(Vector3.up * speed * Time.deltaTime, ForceMode.Impulse);
+        projectileRB.AddRelativeForce(Vector3.up * speed , ForceMode.Impulse);
+        Destroy(gameObject, 5);
     }
 }
