@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private int moveSpeed;
     private float mouseSensitivity;
     private int jumpForce;
-
+    private int moveSpeed;
+   
     private float xRotation = 0f;
 
     private Camera playerCam;
@@ -15,22 +15,35 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         playerCam = GameObject.Find("playerCam").GetComponent<Camera>();
+        
         moveSpeed = 7;
         jumpForce = 200;
         mouseSensitivity = 200f;
+        
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
     {
-        Move();   
-
+        Move();
+ 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
-        
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 12;
+        }
+        else if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = 7;
+        }
+    }
+    private void LateUpdate()
+    {
+        playerCam.transform.position = transform.position + new Vector3(0, .675f, .153f);
     }
 
     void Move()

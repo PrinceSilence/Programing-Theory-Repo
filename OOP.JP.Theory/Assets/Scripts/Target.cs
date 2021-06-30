@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public int maxHealth = 10;         
+    public int currentHealth;          
+    public float moveSpeed = 10;        
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        setCurrentHealth();
+        print("startHP" + currentHealth);
+    }
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.tag == "Projectile")
+        {
+            TakeDamage(other.GetComponent<Projectile>().damage);
+            print("Current Health = " + currentHealth);
+        }
+    }
+    virtual public void setCurrentHealth()
+    {
+        currentHealth = maxHealth;
+    }
+    public int TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        return currentHealth;
     }
 }
