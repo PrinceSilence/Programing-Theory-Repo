@@ -2193,3 +2193,4 @@ Received Import Request.
   path: Assets/Materials/Blue.mat
   artifactKey: Guid(d511e0613396b214886c635e63fd31dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Materials/Blue.mat using Guid(d511e0613396b214886c635e63fd31dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db1af6adb788ad1919c52a752a1d6381') in 0.050696 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
