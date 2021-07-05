@@ -20,7 +20,7 @@ public class PlayerGun : MonoBehaviour
         }
     }
 
-    virtual public void Shoot()
+     void Shoot()
     {
         Instantiate(bullet, firePoint.transform.position, firePoint.transform.rotation);
     }
