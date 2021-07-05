@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+        playerCam.transform.localRotation = Quaternion.Euler(0, 0, 0);
     }
 
     void Update()

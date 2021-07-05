@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class TargetBlue : Target
 {
-
+    public override void SetMaxHeath()
+    { 
+        maxHealth = 2;
+    }
 }
